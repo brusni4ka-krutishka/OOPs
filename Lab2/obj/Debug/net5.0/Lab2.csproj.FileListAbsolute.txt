@@ -1,0 +1,15 @@
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/Lab2.deps.json
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/Lab2.runtimeconfig.json
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/Lab2.runtimeconfig.dev.json
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/Lab2.dll
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/ref/Lab2.dll
+/Users/anastasia/Projects/OOP/Lab2/Lab2/bin/Debug/net5.0/Lab2.pdb
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.csproj.AssemblyReference.cache
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.AssemblyInfoInputs.cache
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.AssemblyInfo.cs
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.csproj.CoreCompileInputs.cache
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.dll
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/ref/Lab2.dll
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.pdb
+/Users/anastasia/Projects/OOP/Lab2/Lab2/obj/Debug/net5.0/Lab2.genruntimeconfig.cache
