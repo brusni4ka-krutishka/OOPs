@@ -7,10 +7,14 @@ namespace Lab4
     class List:IEnumerable //Интерфейс, читай на метаните, я сам не понимаю
     {
         private readonly List<int> list1; //Список элементов для КАЖДОГО ЭКЗЕМПЛЯРА отдельно 
-
+        private readonly List<string> liststr;
         public List(List<int> list1) //Конструктор
         {
             this.list1 = list1;
+        }
+        public List(List<string> liststr)
+        {
+            this.liststr = liststr;
         }
 
         public IEnumerator GetEnumerator() //Задает перечисление, чтоб можно было пользоваться foreach
@@ -95,7 +99,7 @@ namespace Lab4
                 return true;
             }
 
-            if (ReferenceEquals(obj, null))
+            if (obj is null)
             {
                 return false;
             }
@@ -108,5 +112,7 @@ namespace Lab4
             throw new NotImplementedException();
         }
 
+
+        
     }
 }
