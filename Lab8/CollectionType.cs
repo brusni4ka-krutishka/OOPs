@@ -1,58 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO; 
 namespace Lab8
 {
    
-    public class Train { 
-        public string color;
-        public int n;
-        public Train(string color, int n)
-        {
-            this.color = color;
-            this.n = n;
-        }
-
-        public void Move()//переопределяем метод "движение" класса-родителя
-        {
-            Console.WriteLine("Поезд движется.");
-        }
-        public void TrainsCarriage() 
-        {
-            Console.WriteLine("Это некий поезд.");
-        }
-        public string ToString()
-        {
-            return base.ToString() + "Переопределение toString() выполнено.";
-        }
-        public void ShowTrain(int n, string col)
-        {
-            Console.WriteLine($"Поезд с номером {n} имеет {col} цвет!");
-        }
-    }
+    
     public class CollectionType<Type> : IGeneric<Type> where Type : class
     {
-        public List<Type> passwords = new();
-
+        public List<Type> Trains = new();
+        
         public void Add(Type item)
         {
-            passwords.Add(item);
+            Trains.Add(item);
         }
 
         public Type Delete(int item)
         {
-            Type value = passwords[item];
-            passwords.RemoveAt(item);
+            Type value = Trains[item];
+            Trains.RemoveAt(item);
             return value;
         }
 
         public void Check()
         {
             int count = 0;
-            foreach (Type item in passwords)
+            foreach (Type item in Trains)
             {
                 count++;
                 Console.WriteLine($"Элемент списка под номером {count}\nТип: {item.GetType()}\n");
@@ -64,7 +37,7 @@ namespace Lab8
             StreamWriter inFile = null;
             try
             {
-                inFile = new StreamWriter("..//лаба8.txt", false, Encoding.Default);
+                inFile = new("..//лаба8.txt", false, Encoding.Default);
                 inFile.WriteLine("Этот текст добавлен в файл с помощью класса StreamWriter\nЛюблю записывать строки в файлы");
             }
             finally
@@ -115,6 +88,30 @@ namespace Lab8
             Console.WriteLine($"Первый тип {A.GetType()} со значением {A}");
             Console.WriteLine($"Второй тип {B.GetType()} со значением {B}");
             Console.WriteLine($"Третий тип {C.GetType()} со значением {C}");
+        }
+    }
+    public class Train
+    {
+        public string color;
+        public int n;
+        public Train() { }
+
+        public string TrainNum { get; set; }
+        public void Move()//переопределяем метод "движение" класса-родителя
+        {
+            Console.WriteLine("Поезд движется.");
+        }
+        public void TrainsCarriage()
+        {
+            Console.WriteLine("Это некий поезд.");
+        }
+        public override string ToString()
+        {
+            return base.ToString() + "Переопределение toString() выполнено.";
+        }
+        public void ShowTrain(int n, string col)
+        {
+            Console.WriteLine($"Поезд с номером {n} имеет {col} цвет!");
         }
     }
 }

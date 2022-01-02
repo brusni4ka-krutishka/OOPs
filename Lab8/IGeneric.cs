@@ -2,7 +2,7 @@
 
 namespace Lab8
 {
-    interface IGeneric
+    interface IGeneric<Type>
     {
         void Add(Type item);
         Type Delete(int item);
