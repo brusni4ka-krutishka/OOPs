@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab8
 {
     interface IGeneric
     {
+        void Add(Type item);
+        Type Delete(int item);
+        void Check();
     }
 }
