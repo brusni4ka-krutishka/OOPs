@@ -25,7 +25,7 @@ namespace ООП9
         public void Update(string str)
         {
             Job = str;
-            Upgrade.Invoke($"Работаю над [{this.Job}]");
+            Upgrade?.Invoke($"Работаю над [{this.Job}]");
         }
         public void TimeWorking(int i)
         {

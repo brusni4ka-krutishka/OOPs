@@ -16,16 +16,14 @@ namespace ООП9
             {
                 Console.WriteLine("Удалено!");
                 Console.WriteLine();
-                if (Delete != null)
-                    Delete(this, null);
+                Delete?.Invoke(this, null);
             }
             public event EventHandler Mutate; // Описание соб. станд. типа
             public void CommandMutate() // Метод, инициирующий событие
             {
                 Console.WriteLine("Мутировано!");
                 Console.WriteLine();
-                if (Mutate != null)
-                    Mutate(this, null);
+                Mutate?.Invoke(this, null);
             }
         }
         class Leg // ------- Класс-наблюдатель ------------
@@ -200,10 +198,8 @@ namespace ООП9
 
     {
         public delegate void AccountHandler(string message);
-        public event AccountHandler Delete;
-        public event AccountHandler Modify;
-        public event AccountHandler Vvod;
-        public event AccountHandler Replace;
+        public event AccountHandler Delete, Modify,Vvod,Replace;
+ 
         public Programist()
         {
             Console.WriteLine("Введите слово:");
@@ -212,17 +208,17 @@ namespace ООП9
         public void Put(string slovo)
         {
             Slovo = slovo;
-            Vvod.Invoke($"Введенное слово: {slovo}");
+            Vvod?.Invoke($"Введенное слово: {slovo}");
         }
         public void Redact(string slovo)
         {
             slovo = slovo.Remove(0, 1);
-            Delete.Invoke($"Удаление: {slovo}");
+            Delete?.Invoke($"Удаление: {slovo}");
         }
         public void Redact1(string slovo)
         {
             slovo = slovo.Replace("k", "s");
-            Modify.Invoke($"Мутирование: {slovo}");
+            Modify?.Invoke($"Мутирование: {slovo}");
         }
         public void Replacer(string slovo)
         {
@@ -233,7 +229,7 @@ namespace ООП9
             slovo = slovo.Replace("?", String.Empty);
             slovo = slovo.Replace(":", String.Empty);
             slovo = slovo.Replace(";", String.Empty);
-            Replace.Invoke($"Удаление знаков препинания: {slovo}");
+            Replace?.Invoke($"Удаление знаков препинания: {slovo}");
         }
     }
 }
