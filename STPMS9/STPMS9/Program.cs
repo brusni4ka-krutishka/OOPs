@@ -31,11 +31,13 @@ namespace ООП9
             public void Show(object sender, EventArgs e)
             {
                 Console.WriteLine("Исходный список!"); // Обработчик соб-я
-                List<Person> people = new List<Person>(3);
-                people.Add(new Person() { Name = "Том" });
-                people.Add(new Person() { Name = "Билл" });
-                people.Add(new Person() { Name = "Джон" });
-                people.Add(new Person() { Name = "Артур" });
+                List<Person> people = new List<Person>(3)
+                {
+                    new Person() { Name = "Том" },
+                    new Person() { Name = "Билл" },
+                    new Person() { Name = "Джон" },
+                    new Person() { Name = "Артур" }
+                };
 
 
                 foreach (Person p in people)
@@ -47,11 +49,13 @@ namespace ООП9
             public void Mix(object sender, EventArgs e)
             {
                 Console.WriteLine("Перемешивание списка!"); // Обработчик соб-я
-                List<Person> people = new List<Person>(3);
-                people.Add(new Person() { Name = "Джон" });
-                people.Add(new Person() { Name = "Том" });
-                people.Add(new Person() { Name = "Артур" });
-                people.Add(new Person() { Name = "Билл" });
+                List<Person> people = new List<Person>(3)
+                {
+                    new Person() { Name = "Джон" },
+                    new Person() { Name = "Том" },
+                    new Person() { Name = "Артур" },
+                    new Person() { Name = "Билл" }
+                };
                 people.RemoveAt(1);
 
 
@@ -64,11 +68,13 @@ namespace ООП9
             public void Delete1(object sender, EventArgs e)
             {
                 Console.WriteLine("Удаление первого элемента!"); // Обработчик соб-я
-                List<Person> people = new List<Person>(3);
-                people.Add(new Person() { Name = "Том" });
-                people.Add(new Person() { Name = "Билл" });
-                people.Add(new Person() { Name = "Джон" });
-                people.Add(new Person() { Name = "Артур" });
+                List<Person> people = new List<Person>(3)
+                {
+                    new Person() { Name = "Том" },
+                    new Person() { Name = "Билл" },
+                    new Person() { Name = "Джон" },
+                    new Person() { Name = "Артур" }
+                };
                 people.RemoveAt(0);
 
 
@@ -81,12 +87,14 @@ namespace ООП9
             public void Add(object sender, EventArgs e)
             {
                 Console.WriteLine("Добавление в конец списка элемента!"); // Обработчик соб-я
-                List<Person> people = new List<Person>(3);
-                people.Add(new Person() { Name = "Том" });
-                people.Add(new Person() { Name = "Билл" });
-                people.Add(new Person() { Name = "Джон" });
-                people.Add(new Person() { Name = "Артур" });
-                people.Add(new Person() { Name = "Mark" });
+                List<Person> people = new List<Person>(3)
+                {
+                    new Person() { Name = "Том" },
+                    new Person() { Name = "Билл" },
+                    new Person() { Name = "Джон" },
+                    new Person() { Name = "Артур" },
+                    new Person() { Name = "Mark" }
+                };
                 people.RemoveAt(0);
 
 
@@ -108,10 +116,10 @@ namespace ООП9
             {
 
                 Programmist s = new Programmist();
-                Leg o1 = new Leg();
-                Leg o2 = new Leg();
-                Leg o3 = new Leg();
-                Leg people = new Leg();
+                Leg o1 = new Leg(),
+                 o2 = new Leg(),
+                 o3 = new Leg(),
+                 people = new Leg();
                 s.Delete += o1.Show; // регистрация обработчика
                 s.Delete += o1.Mix; // регистрация обработчика
                 s.Delete += o1.Delete1;
@@ -145,6 +153,7 @@ namespace ООП9
                 acc.Delete += DisplayMessage;
                 acc.Modify += DisplayMessage;
                 acc.Replace += DisplayMessage;
+                Console.WriteLine("Введите строку:");
                 acc.Put(Console.ReadLine());
                 acc.Redact(acc.Slovo);
                 acc.Redact1(acc.Slovo);
@@ -154,11 +163,8 @@ namespace ООП9
 
 
             }
-            private static void DisplayMessage(string message)
-            {
-                Console.WriteLine(message);
+            private static void DisplayMessage(string message) => Console.WriteLine(message);
             }
-        }
 
         static int GetInt(int x1, Func<int, int> retF)
         {
@@ -183,15 +189,11 @@ namespace ООП9
                 op(x1, x2);
         }
 
-        static void Add(int x1, int x2)
-        {
-            Console.WriteLine("Сумма чисел: " + (x1 + x2));
-        }
+        static void Add(int x1, int x2)=> Console.WriteLine("Сумма чисел: " + (x1 + x2));
+     
 
-        static void Substract(int x1, int x2)
-        {
-            Console.WriteLine("Разность чисел: " + (x1 - x2));
-        }
+        static void Substract(int x1, int x2)=> Console.WriteLine("Разность чисел: " + (x1 - x2));
+        
     }
     
     class Programist
@@ -200,10 +202,8 @@ namespace ООП9
         public delegate void AccountHandler(string message);
         public event AccountHandler Delete, Modify,Vvod,Replace;
  
-        public Programist()
-        {
-            Console.WriteLine("Введите слово:");
-        }
+        public Programist() => Console.WriteLine("Введите слово:");
+        
         public string Slovo { get; private set; }
         public void Put(string slovo)
         {
@@ -222,13 +222,10 @@ namespace ООП9
         }
         public void Replacer(string slovo)
         {
-            slovo = slovo.Replace(",", String.Empty);
-            slovo = slovo.Replace(".", String.Empty);
-            slovo = slovo.Replace("/", String.Empty);
-            slovo = slovo.Replace("!", String.Empty);
-            slovo = slovo.Replace("?", String.Empty);
-            slovo = slovo.Replace(":", String.Empty);
-            slovo = slovo.Replace(";", String.Empty);
+            slovo = slovo.Replace(",", String.Empty).Replace(".", String.Empty).Replace("/", String.Empty).Replace("!", String.Empty);
+
+            slovo = slovo.Replace("?", String.Empty).Replace(":", String.Empty).Replace(";", String.Empty);
+
             Replace?.Invoke($"Удаление знаков препинания: {slovo}");
         }
     }

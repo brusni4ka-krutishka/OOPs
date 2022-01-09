@@ -6,11 +6,8 @@ namespace ООП9
 {
     static class Fixer
     {
-        public static string Trimmer(ref string str)
-        {
-            str = str.Trim();
-            return str;
-        }
+        public static string Trimmer(ref string str) =>str.Trim();
+        
         public static string Replacer(ref string str)
         {
             str = str.Replace(",", String.Empty);
@@ -30,8 +27,7 @@ namespace ООП9
         private static string[] Spliter(string str)
         {
             int n = 999;
-            string[] split = null;
-            split = str.Split(' ', n);
+            string[] split = str.Split(' ', n);
             return split;
         }
         private static string ResultStr(string[] split)

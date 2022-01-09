@@ -32,10 +32,8 @@ namespace Lab9
         
         BeChange change;
 
-        public void RegChange(BeChange change)
-        {
-            this.change=change;
-        }
+        public void RegChange(BeChange change)=> this.change = change;
+
 
         public string Race { get; set; }
         public short Health { get; set; }
