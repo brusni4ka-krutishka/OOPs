@@ -97,7 +97,7 @@ namespace Lab8
         public Train() { }
 
         public string TrainNum { get; set; }
-        public void Move()//переопределяем метод "движение" класса-родителя
+        public void Move()
         {
             Console.WriteLine("Поезд движется.");
         }

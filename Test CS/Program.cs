@@ -10,7 +10,8 @@ namespace Test_CS
         public event AccountHandler Notify; //Событие, соотв. классу делегата (AccountHandler)
         private int sum;
         public Account(int sum) => this.sum = sum; //Конструктор класса Account
-        public void RegisterHandler(AccountHandler del) => taken = del;//Метод, принимающий метод, для вызова делегатом
+        public void RegisterHandler(AccountHandler del, AccountHandler aboba) => taken = del + aboba;//Метод, принимающий метод, для вызова делегатом
+
         
         public void Add(int sum) => this.sum += sum;
         public void Take(int sum)
@@ -28,13 +29,14 @@ namespace Test_CS
     {
 
         static void PrintSimpleMessage(string message) => Console.WriteLine(message);
+        static void PrintSimpleMessage2(string message) => Console.WriteLine("ok");
         static void Main()
         {
             // создаем банковский счет
             Account account = new(200),
                 account2 = new(400);
-            account.RegisterHandler(PrintSimpleMessage);// Добавляем в делегат ссылку на метод PrintSimpleMessage
-            account2.RegisterHandler(PrintSimpleMessage);
+            account.RegisterHandler(PrintSimpleMessage, PrintSimpleMessage2);// Добавляем в делегат ссылку на метод PrintSimpleMessage
+            account2.RegisterHandler(PrintSimpleMessage, PrintSimpleMessage2);
 
             account.Notify += (string mes) => Console.WriteLine($"Объект 1: {mes}");
             account2.Notify += (string mes) => Console.WriteLine($"Объект 2: {mes}");
