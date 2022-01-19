@@ -6,11 +6,11 @@ namespace Lab8
 {
    
     
-    public class CollectionType<Type> : IGeneric<Type> where Type : class
+    public class CollectionType<Type> : IGeneric<Type> where Type :  Train
     {
         public List<Type> Trains = new();
         
-        public void Add(Type item)
+        public void MyAdd(Type item)
         {
             Trains.Add(item);
         }

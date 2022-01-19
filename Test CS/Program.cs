@@ -10,8 +10,8 @@ namespace Test_CS
         public event AccountHandler Notify; //Событие, соотв. классу делегата (AccountHandler)
         private int sum;
         public Account(int sum) => this.sum = sum; //Конструктор класса Account
-        public void RegisterHandler(AccountHandler del, AccountHandler aboba) => taken = del + aboba;//Метод, принимающий метод, для вызова делегатом
-
+        public void RegisterHandler(AccountHandler del, AccountHandler aboba) => taken = PrintSimpleMessage;//Метод, принимающий метод, для вызова делегатом
+        static void PrintSimpleMessage(string message) => Console.WriteLine(message);
         
         public void Add(int sum) => this.sum += sum;
         public void Take(int sum)

@@ -18,7 +18,7 @@ namespace Lab8
             CollectionType<Train> myCollection = new();
             for (byte i = 0; i < 4; i++)
             {
-                myCollection.Add(Trains[i]);
+                myCollection.MyAdd(Trains[i]);
             }
             myCollection.Check();
             Console.WriteLine("--------------------------------------------------------");
