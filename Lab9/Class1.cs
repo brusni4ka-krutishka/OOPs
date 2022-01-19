@@ -5,6 +5,9 @@ namespace Lab9
 {
     class Game
     {
+        public delegate void Attack();
+        public delegate void Heal();
+        public delegate void Apocalypse();
         public event Attack Attacking;
         public event Heal Healing;
         public event Apocalypse Apocalypsing;
@@ -28,11 +31,11 @@ namespace Lab9
 
     class Сharacter
     {
-        public int changeCounter = 0;
+        public static int changeCounter = 0;
         
-        BeChange change;
+        BeChange changeFromClass;
 
-        public void RegChange(BeChange change)=> this.change = change;
+        public void RegChange(BeChange change)=> changeFromClass += change;
 
 
         public string Race { get; set; }
@@ -49,7 +52,7 @@ namespace Lab9
         {
             changeCounter++;
             Console.WriteLine("Добавлен персонаж");
-            change?.Invoke($"Кол-во персонажей: {changeCounter}\n");
+            changeFromClass?.Invoke($"Кол-во персонажей: {changeCounter}\n");
         }
 
         public void Attack()
